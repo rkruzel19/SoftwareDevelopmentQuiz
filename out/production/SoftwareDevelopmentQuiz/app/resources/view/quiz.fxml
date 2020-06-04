@@ -1,0 +1,35 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:controller="app.java.controllers.QuizController" xmlns:fx="http://javafx.com/fxml">
+    <left>
+        <VBox fx:id="quizLeft">
+            <Label text="Java" />
+            <Label text="10 Questions" />
+            <Label text="3/5 correct" />
+            <Label text="Time taken: 2:34" />
+        </VBox>
+    </left>
+    <center>
+        <VBox fx:id="quizCenter">
+            <VBox fx:id="questionLabel">
+                <Label text="Question 4" />
+                <Label text="What is my favorite sport?" />
+            </VBox>
+
+            <RadioButton text="hockey">
+                <toggleGroup>
+                    <ToggleGroup fx:id="answerList" />
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton text="soccer" toggleGroup="$answerList" />
+            <RadioButton text="baseball" toggleGroup="$answerList" />
+            <RadioButton text="rugby" toggleGroup="$answerList" />
+            <StackPane fx:id="submitButton">
+                <Button fx:id="subButton" text="Submit" onAction="#backToWelcome"/>
+            </StackPane>
+
+        </VBox>
+    </center>
+
+</BorderPane>

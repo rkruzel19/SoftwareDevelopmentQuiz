@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="app.java.controllers.QuizSelectionController">
+    <center>
+        <VBox fx:id="quizDetails">
+            <VBox  fx:id="selectionLabels">
+                <Label text="Java"/>
+                <Label text="43 questions available"/>
+            </VBox>
+            <VBox fx:id="questionsInput">
+                <Label text="How many questions?"/>
+                <HBox fx:id="inputField">
+                    <TextField fx:id="numberOfQuestions"/>
+                    <Button fx:id="beginQuizButton" text="Begin Quiz" onAction="#beginQuiz"/>
+                </HBox>
+            </VBox>
+            <Button fx:id="homeButton" text="Home" onAction="#returnHome"/>
+        </VBox>
+    </center>
+</BorderPane>
