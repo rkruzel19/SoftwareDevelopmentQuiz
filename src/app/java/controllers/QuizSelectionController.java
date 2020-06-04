@@ -30,6 +30,7 @@ public class QuizSelectionController implements Initializable {
 
     public void beginQuiz() throws Exception{
         int amount = receiveInput();
+        System.out.println(questionPool.getQuestions().get(amount));
         sb.setNewScene(beginQuizButton, "quiz");
     }
 
