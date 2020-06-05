@@ -6,16 +6,16 @@ import java.util.List;
 public class Question {
 
     private String query;
-    private int correctAnswer;
+    private String correctAnswer;
     private List<String> answers;
 
     public Question() {
         query = "";
-        correctAnswer = 0;
         answers = new ArrayList<>();
+        correctAnswer = "";
     }
 
-    public Question(String query, List<String> answers, int correctAnswer) {
+    public Question(String query, List<String> answers, String correctAnswer) {
         this.query = query;
         this.correctAnswer = correctAnswer;
         this.answers = answers;
@@ -29,11 +29,11 @@ public class Question {
         this.query = query;
     }
 
-    public int getCorrectAnswer() {
+    public String getCorrectAnswer() {
         return correctAnswer;
     }
 
-    public void setCorrectAnswer(int correctAnswer) {
+    public void setCorrectAnswer(String correctAnswer) {
         this.correctAnswer = correctAnswer;
     }
 
@@ -49,8 +49,8 @@ public class Question {
     public String toString() {
         return "Question{" +
                 "query='" + query + '\'' +
-                ", correctAnswer=" + correctAnswer +
                 ", answers=" + answers +
+                ", correctAnswer=" + correctAnswer +
                 '}';
     }
 }

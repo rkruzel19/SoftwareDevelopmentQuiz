@@ -5,29 +5,31 @@
     <left>
         <VBox fx:id="quizLeft">
             <Label text="Java" />
-            <Label text="10 Questions" />
-            <Label text="3/5 correct" />
+            <Label fx:id="numberOfQuestions" text="10 Questions" />
+            <Label fx:id="score" />
             <Label text="Time taken: 2:34" />
         </VBox>
     </left>
     <center>
-        <VBox fx:id="quizCenter">
-            <VBox fx:id="questionLabel">
-                <Label text="Question 4" />
-                <Label text="What is my favorite sport?" />
+        <VBox id="quizCenter">
+            <VBox id="questionLabel">
+                <Label fx:id="questionNumber" />
+                <Label fx:id="questionText" />
             </VBox>
 
-            <RadioButton text="hockey">
+            <RadioButton fx:id="option1" >
                 <toggleGroup>
                     <ToggleGroup fx:id="answerList" />
                 </toggleGroup>
             </RadioButton>
-            <RadioButton text="soccer" toggleGroup="$answerList" />
-            <RadioButton text="baseball" toggleGroup="$answerList" />
-            <RadioButton text="rugby" toggleGroup="$answerList" />
-            <StackPane fx:id="submitButton">
-                <Button fx:id="subButton" text="Submit" onAction="#backToWelcome"/>
+            <RadioButton fx:id="option2" toggleGroup="$answerList" />
+            <RadioButton fx:id="option3" toggleGroup="$answerList" />
+            <RadioButton fx:id="option4" toggleGroup="$answerList" />
+            <StackPane id="submitButton">
+                <Button fx:id="submitAnswerButton" text="Submit" onAction="#submitAnswerButton"/>
             </StackPane>
+            <Button text="test" onAction="#printQuestions"/>
+            <Button fx:id="homeButton" text="home" onAction="#backToWelcome"/>
 
         </VBox>
     </center>

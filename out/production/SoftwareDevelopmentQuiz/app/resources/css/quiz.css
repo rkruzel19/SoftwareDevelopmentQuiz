@@ -3,7 +3,7 @@
 }
 
 #quizLeft{
-    -fx-background-color: purple;
+    -fx-background-color: #9c0e7c;
     -fx-alignment: center;
     -fx-spacing: 10px;
 
@@ -11,7 +11,7 @@
 }
 
 .label{
-    -fx-text-fill: deeppink;
+    -fx-text-fill: #fea2ff;
     -fx-font-weight: bold;
     -fx-font-size: 30px;
 }

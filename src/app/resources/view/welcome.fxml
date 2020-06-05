@@ -4,14 +4,14 @@
 <?import javafx.scene.layout.VBox?>
 <BorderPane fx:controller="app.java.controllers.WelcomeController" xmlns:fx="http://javafx.com/fxml">
     <left>
-        <VBox fx:id="leftMenu">
+        <VBox id="leftMenu">
             <Button styleClass="leftButtons" text="Add Question" />
             <Button styleClass="leftButtons" text="Browse Questions" />
         </VBox>
     </left>
     <center>
-        <VBox fx:id="centerContent">
-            <VBox fx:id="welcomeMessage">
+        <VBox id="centerContent">
+            <VBox id="welcomeMessage">
                 <Label text="Welcome to the QuizApp" />
                 <Label text="Test your knowledge" />
             </VBox>

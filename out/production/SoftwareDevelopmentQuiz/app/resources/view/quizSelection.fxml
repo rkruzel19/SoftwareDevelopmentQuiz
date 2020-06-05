@@ -5,14 +5,14 @@
 
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="app.java.controllers.QuizSelectionController">
     <center>
-        <VBox fx:id="quizDetails">
-            <VBox  fx:id="selectionLabels">
+        <VBox id="quizDetails">
+            <VBox  id="selectionLabels">
                 <Label text="Java"/>
-                <Label text="43 questions available"/>
+                <Label fx:id="totalQsInDatabase"/>
             </VBox>
-            <VBox fx:id="questionsInput">
+            <VBox id="questionsInput">
                 <Label text="How many questions?"/>
-                <HBox fx:id="inputField">
+                <HBox id="inputField">
                     <TextField fx:id="numberOfQuestions"/>
                     <Button fx:id="beginQuizButton" text="Begin Quiz" onAction="#beginQuiz"/>
                 </HBox>

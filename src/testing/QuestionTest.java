@@ -12,7 +12,7 @@ public class QuestionTest {
     @Test
     public void constructor(){
         String query = "What is 1 + 1";
-        int correctAnswer = 3;
+        String correctAnswer = "2";
         List<String> answers = new ArrayList<String>(Arrays.asList("0", "3", "5", "2"));
         Question question = new Question(query, answers, correctAnswer);
 
