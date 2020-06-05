@@ -14,9 +14,18 @@ public class QuizQuestionsGenerator {
         List<Question> questionList = new ArrayList<>();
         for(int i = 1; i <= numberOfQs; i++){
             int questionId = new Random().nextInt(10);
-            questionList.add(QuestionPool.getQuestions().get(questionId));
+            Question question = QuestionPool.getQuestions().get(questionId);
+            while (questionList.contains(question)){
+                questionId = new Random().nextInt(10);
+                question = QuestionPool.getQuestions().get(questionId);
+            }
+            questionList.add(question);
         }
         return questionList;
+    }
+
+    public static boolean containsQuestion(List<Question> questionList, Question question){
+        return questionList.contains(question);
     }
 
 }
