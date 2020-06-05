@@ -32,7 +32,6 @@ public class QuizSelectionController implements Initializable {
     public TextField numberOfQuestions;
     @FXML
     public Label totalQsInDatabase;
-    public QuestionPool questionPool;
     SceneBuilder sb;
 
     public void beginQuiz() throws Exception{
@@ -73,7 +72,6 @@ public class QuizSelectionController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        questionPool = new QuestionPool();
         sb = new SceneBuilder();
         quizQuestions = new ArrayList<>();
         totalQsInDatabase.setText(QuestionPool.getQuestions().size() + " questions available");
