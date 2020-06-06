@@ -7,7 +7,7 @@ import javafx.scene.control.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class WelcomeController implements Initializable {
+public class WelcomeController extends Controller implements Initializable {
 
     @FXML
     private Button startQuizButton;
@@ -20,5 +20,10 @@ public class WelcomeController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         sb = new SceneBuilder();
+    }
+
+    @Override
+    public void initData(Object parameter) {
+
     }
 }

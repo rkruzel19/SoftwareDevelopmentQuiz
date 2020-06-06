@@ -1,25 +1,18 @@
 package app.java.controllers;
 
-import app.java.Main;
 import app.java.dao.Question;
 import app.java.services.SceneBuilder;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.stage.Stage;
-import javafx.stage.Window;
-
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class QuizController implements Initializable {
+public class QuizController extends Controller implements Initializable {
 
     @FXML
     Button submitAnswerButton;
@@ -57,24 +50,9 @@ public class QuizController implements Initializable {
 
     public void submitAnswerButton() throws Exception{
         updateScore();
-        System.out.println(questionsAnswered + "   " + quizList.size());
         if(questionsAnswered == quizList.size()){
             // games over
-
-            Stage stage = (Stage)submitAnswerButton.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../../resources/view/endOfQuiz.fxml"));
-            Parent root = loader.load();
-
-            Scene scene = new Scene(root, 1200, 800);
-
-            // Access QuizController and call method
-            EndOfQuizController endOfQuizController = loader.getController();
-            endOfQuizController.initData(score);
-
-            scene.getStylesheets().add(Main.class.getResource("../resources/css/endOfQuiz.css").toExternalForm());
-            stage.setScene(scene);
-            stage.show();
+            sb.setNewSceneWithParameters(submitAnswerButton, "endOfQuiz", score);
 
         } else {
             // continue to next question
@@ -83,19 +61,7 @@ public class QuizController implements Initializable {
             setQuestionNumber(currentQuestionNumber);
             setQuestionText(currentQuestion.getQuery());
             setChoices(currentQuestion.getAnswers());
-//            setScore();
         }
-    }
-
-    public void initData(List<Question> questions){
-        quizList = questions;
-
-        // Set first question
-        currentQuestion = getQuestionFromList(currentQuestionNumber);
-        setQuestionNumber(currentQuestionNumber);
-        setQuestionText(currentQuestion.getQuery());
-        setChoices(currentQuestion.getAnswers());
-        this.numberOfQuestions.setText(quizList.size() + " questions");
     }
 
     public void setQuestionNumber(int questionNumber){
@@ -147,5 +113,17 @@ public class QuizController implements Initializable {
         correctAnswers = 0;
         setScore();
 
+    }
+
+    @Override
+    public void initData(Object parameter) {
+        this.quizList = (List<Question>)parameter;
+
+        // Set first question
+        currentQuestion = getQuestionFromList(currentQuestionNumber);
+        setQuestionNumber(currentQuestionNumber);
+        setQuestionText(currentQuestion.getQuery());
+        setChoices(currentQuestion.getAnswers());
+        this.numberOfQuestions.setText(quizList.size() + " questions");
     }
 }

@@ -30,7 +30,6 @@
             </StackPane>
             <Button text="test" onAction="#printQuestions"/>
             <Button fx:id="homeButton" text="home" onAction="#backToWelcome"/>
-
         </VBox>
     </center>
 
