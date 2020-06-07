@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class QuizController extends Controller implements Initializable {
+public class QuizController implements Initializable, Controller {
 
     @FXML
     Button submitAnswerButton;

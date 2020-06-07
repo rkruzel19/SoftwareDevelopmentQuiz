@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class WelcomeController extends Controller implements Initializable {
+public class WelcomeController implements Initializable, Controller {
 
     @FXML
     private Button startQuizButton;

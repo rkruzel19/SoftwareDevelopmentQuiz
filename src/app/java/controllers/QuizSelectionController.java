@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class QuizSelectionController extends Controller implements Initializable {
+public class QuizSelectionController implements Initializable, Controller {
 
     @FXML
     public List<Question> quizQuestions;

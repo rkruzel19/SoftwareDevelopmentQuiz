@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EndOfQuizController extends Controller implements Initializable {
+public class EndOfQuizController implements Initializable, Controller {
 
     @FXML
     Label userScore;

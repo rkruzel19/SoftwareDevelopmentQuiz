@@ -1,8 +1,8 @@
 package app.java.controllers;
 
 
-public abstract class Controller<T> {
+public interface Controller<T> {
 
-    public abstract void initData(T parameter);
+    void initData(T parameter);
 
 }
