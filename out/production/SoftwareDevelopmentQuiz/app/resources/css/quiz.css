@@ -23,6 +23,10 @@
 #questionLabel{
     -fx-padding: 70px;
     -fx-alignment: center;
+}
+
+#questionText{
+    /*-fx-text-overrun: ;*/
 
 }
 

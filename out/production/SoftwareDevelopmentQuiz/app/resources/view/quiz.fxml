@@ -5,7 +5,7 @@
     <left>
         <VBox fx:id="quizLeft">
             <Label text="Java" />
-            <Label fx:id="numberOfQuestions" text="10 Questions" />
+            <Label fx:id="numberOfQuestions" />
             <Label fx:id="score" />
             <Label text="Time taken: 2:34" />
         </VBox>
@@ -14,7 +14,7 @@
         <VBox id="quizCenter">
             <VBox id="questionLabel">
                 <Label fx:id="questionNumber" />
-                <Label fx:id="questionText" />
+                <Label fx:id="questionText" wrapText="true" />
             </VBox>
 
             <RadioButton fx:id="option1" >
