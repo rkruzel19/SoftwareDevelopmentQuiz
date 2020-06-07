@@ -1,5 +1,6 @@
 package app.java;
 
+import app.java.services.SceneBuilder;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,13 +11,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../resources/view/welcome.fxml"));
-        primaryStage.setTitle("Software Developer Quiz");
 
-        Scene welcomePage = new Scene(root, 1200, 800);
-        welcomePage.getStylesheets().add(Main.class.getResource("../resources/css/welcome.css").toExternalForm());
-        primaryStage.setScene(welcomePage);
-        primaryStage.show();
+        SceneBuilder sb = new SceneBuilder();
+        sb.setNewScene(primaryStage, "welcome");
     }
 
 

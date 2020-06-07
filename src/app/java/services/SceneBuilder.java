@@ -6,12 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.scene.control.Button;
 
 public class SceneBuilder<T> {
 
-    public void setNewScene(Button button, String file) throws Exception {
-        Stage stage = (Stage)button.getScene().getWindow();
+    public void setNewScene(Stage stage, String file) throws Exception {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../../resources/view/" + file + ".fxml"));
         Parent root = loader.load();
@@ -22,8 +20,7 @@ public class SceneBuilder<T> {
         stage.show();
     }
 
-    public void setNewSceneWithParameters(Button button, String file, T parameters) throws Exception {
-        Stage stage = (Stage)button.getScene().getWindow();
+    public void setNewSceneWithParameters(Stage stage, String file, T parameters) throws Exception {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../../resources/view/" + file + ".fxml"));
         Parent root = loader.load();
@@ -33,7 +30,7 @@ public class SceneBuilder<T> {
         Controller controller = loader.getController();
         controller.initData(parameters);
 
-        scene.getStylesheets().add(Main .class.getResource("../resources/css/" + file + ".css").toExternalForm());
+        scene.getStylesheets().add(Main.class.getResource("../resources/css/" + file + ".css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

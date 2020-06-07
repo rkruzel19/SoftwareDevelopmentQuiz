@@ -20,6 +20,7 @@
 #questionsInput{
     -fx-alignment: center;
     -fx-font-size: 30px;
+    -fx-spacing: 30px;
 }
 
 #inputField{

@@ -3,7 +3,7 @@
 
 <BorderPane fx:controller="app.java.controllers.QuizController" xmlns:fx="http://javafx.com/fxml">
     <left>
-        <VBox fx:id="quizLeft">
+        <VBox id="quizLeft">
             <Label text="Java" />
             <Label fx:id="numberOfQuestions" />
             <Label fx:id="score" />

@@ -6,7 +6,6 @@
     -fx-background-color: #9c0e7c;
     -fx-alignment: center;
     -fx-spacing: 10px;
-
     -fx-min-width: 300px;
 }
 
@@ -23,11 +22,6 @@
 #questionLabel{
     -fx-padding: 70px;
     -fx-alignment: center;
-}
-
-#questionText{
-    /*-fx-text-overrun: ;*/
-
 }
 
 .radio-button{

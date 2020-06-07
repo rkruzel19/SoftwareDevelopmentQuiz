@@ -9,6 +9,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +33,11 @@ public class QuizSelectionController extends Controller implements Initializable
     public void beginQuiz() throws Exception{
         int amount = receiveInput();
         populateQuizQuestions(amount);
-        sb.setNewSceneWithParameters(beginQuizButton, "quiz", quizQuestions);
+        sb.setNewSceneWithParameters((Stage)beginQuizButton.getScene().getWindow(), "quiz", quizQuestions);
     }
 
     public void returnHome() throws Exception{
-        sb.setNewScene(beginQuizButton, "welcome");
+        sb.setNewScene((Stage)homeButton.getScene().getWindow(), "welcome");
     }
 
     public int receiveInput(){
@@ -43,7 +45,12 @@ public class QuizSelectionController extends Controller implements Initializable
     }
 
     public void populateQuizQuestions(int numberOfQuestions){
-        quizQuestions = QuizQuestionsGenerator.generateQuestionList(numberOfQuestions);
+        quizQuestions = QuizQuestionsGenerator.generateXQuestions(numberOfQuestions);
+    }
+
+    public void beginQuizAllQuestions() throws Exception{
+        quizQuestions = QuizQuestionsGenerator.generateEntireQuestionList();
+        sb.setNewSceneWithParameters((Stage)beginQuizButton.getScene().getWindow(), "quiz", quizQuestions);
     }
 
     @Override

@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
+
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -45,14 +47,14 @@ public class QuizController extends Controller implements Initializable {
     SceneBuilder sb;
 
     public void backToWelcome() throws Exception{
-        sb.setNewScene(homeButton, "welcome");
+        sb.setNewScene((Stage)homeButton.getScene().getWindow(), "welcome");
     }
 
     public void submitAnswerButton() throws Exception{
         updateScore();
         if(questionsAnswered == quizList.size()){
             // games over
-            sb.setNewSceneWithParameters(submitAnswerButton, "endOfQuiz", score);
+            sb.setNewSceneWithParameters((Stage)submitAnswerButton.getScene().getWindow(), "endOfQuiz", score);
 
         } else {
             // continue to next question

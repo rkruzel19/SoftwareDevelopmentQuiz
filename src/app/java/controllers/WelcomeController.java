@@ -4,6 +4,8 @@ import app.java.services.SceneBuilder;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -14,7 +16,8 @@ public class WelcomeController extends Controller implements Initializable {
     public SceneBuilder sb;
 
     public void startQuiz() throws Exception{
-        sb.setNewScene(startQuizButton, "quizSelection");
+        sb.setNewScene((Stage)startQuizButton.getScene().getWindow(), "quizSelection");
+
     }
 
     @Override

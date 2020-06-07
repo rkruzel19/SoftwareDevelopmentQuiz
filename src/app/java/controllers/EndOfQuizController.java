@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -19,7 +21,7 @@ public class EndOfQuizController extends Controller implements Initializable {
 
 
     public void goHome() throws Exception{
-        sb.setNewScene(homeButton, "welcome");
+        sb.setNewScene((Stage)homeButton.getScene().getWindow(), "welcome");
     }
 
     @Override
